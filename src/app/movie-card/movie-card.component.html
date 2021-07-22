@@ -1,0 +1,63 @@
+<div class="container">
+  <mat-card class="card" *ngFor="let movie of movies;">
+    <mat-card-header>
+      <mat-card-title>
+        {{movie.Title}}
+      </mat-card-title>
+      <mat-card-subtitle>
+        Directed by: {{movie.Director.Name}}
+      </mat-card-subtitle>
+    </mat-card-header>
+      <img src={{movie.ImagePath}} alt={{movie.Title}}/>
+      <mat-card-actions>
+        <button
+          mat-button
+          color="primary"
+          (click)="openDirectorDialog(movie.Title, movie.Director.Name, movie.Director.Bio)"
+        >
+          Director
+        </button>
+        <button
+          mat-button
+          color="primary"
+          (click)="openGenreDialog(movie.Title, movie.Genre.Name, movie.Genre.Description)"
+        >
+          Genre
+        </button>
+        <button
+          mat-button
+          color="primary"
+          (click)="openSynopsisDialog(movie.Title, movie.Description)"
+        >
+          Synopsis
+        </button>
+        <!-- ng template buttons go here under this boolean -->
+        <ng-container *ngIf="this.favoriteMovies.includes(movie._id); then selected; else unselected"></ng-container>
+          <ng-template #unselected>
+            <button mat-icon-button>
+              <mat-icon 
+                (click)="addFavMovie(movie._id)"
+              >
+                favorite_border
+              </mat-icon>
+            </button>
+          </ng-template>
+          <ng-template #selected>
+            <button mat-icon-button>
+              <mat-icon
+              (click)="removeFavMovie(movie._id)"
+              >
+                favorite
+              </mat-icon>
+            </button>
+          </ng-template>
+        
+      </mat-card-actions>
+  </mat-card>
+</div>
+
+
+
+
+
+
