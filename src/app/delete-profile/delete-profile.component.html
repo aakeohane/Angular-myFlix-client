@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-header style=" display: flex; justify-content: center;">
+    <mat-card-title style="text-align: center; font-size: larger;">
+      Are you sure you want to delete your profile?
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-actions style=" display: flex; justify-content: center;">
+    <button
+      color="warn"
+      mat-raised-button
+      (click)="deleteProfile()"
+      routerLink="/"
+    >
+      Delete Profile
+    </button>
+    <button
+      mat-raised-button
+      (click)="closeDialog()"
+      routerLink="/profile"
+    >
+      Cancel
+  </button>
+  </mat-card-actions>
+</mat-card>

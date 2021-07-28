@@ -1,0 +1,60 @@
+<app-navigation-bar></app-navigation-bar>
+
+<div class="profile-container">
+  <mat-card class="profile-card">
+      <mat-card-header class="header">
+          <mat-card-title>Profile</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+          <mat-card-subtitle>
+            <span>Username:</span> {{user.Username}}
+          </mat-card-subtitle>
+          <mat-card-subtitle>
+            <span>Email:</span> {{user.Email}}
+          </mat-card-subtitle>
+          <mat-card-subtitle>
+            <span>Birthday:</span> {{user.Birthday | date: 'MM/dd/yyyy'}}
+          </mat-card-subtitle>
+      </mat-card-content>
+
+      <mat-card-actions style="padding: 1rem;">
+        <div class="button-container">
+          <button 
+            mat-raised-button 
+            style="margin-bottom: .5rem;"
+            (click)="openEditProfile()"
+          >
+            Edit Profile
+          </button>
+          <button 
+            mat-raised-button 
+            color="warn"
+            (click)="openDeleteProfile()"
+          >
+            Delete Account
+          </button>
+        </div>
+      </mat-card-actions>
+  </mat-card>
+</div>
+
+<h2>Favorite Movies</h2>
+<div class="favorite-movies">
+  <mat-card *ngFor="let movie of favoriteMovies;" class="movie-card">
+    <mat-card-header>
+      <mat-card-title>{{movie.Title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <img src={{movie.ImagePath}} alt={{movie.Title}}/>
+      <button
+        mat-raised-button
+        class="remove-button"
+        (click)="removeFavMovie(movie._id)"
+        color="warn"
+      >
+        Remove Favorite
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>

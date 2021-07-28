@@ -43,8 +43,8 @@ export class UserLoginFormComponent implements OnInit {
         duration: 2000
       })
       this.router.navigate(['movies']);
-    }, (result) => {
-      this.snackBar.open(result, 'OK', {
+    }, () => {
+      this.snackBar.open("Please enter required information", 'OK', {
         duration: 2000
       })
     })

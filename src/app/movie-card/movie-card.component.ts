@@ -27,7 +27,7 @@ export class MovieCardComponent implements OnInit {
   // component so getAllMovies and FavMovies will then be called
   ngOnInit(): void {
     this.getAllMovies();
-    this.getFavoriteMovies()
+    this.getFavoriteMovies();
   }
 
   // loads all the movies from database

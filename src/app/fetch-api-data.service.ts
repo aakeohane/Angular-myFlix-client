@@ -141,10 +141,10 @@ export class FetchApiDataService {
   }
 
   // edit a users information
-  public editUser(): Observable<any> {
+  public editUser(userDetails: any): Observable<any> {
     const token = localStorage.getItem('token')
     const user = localStorage.getItem('user')
-    return this.http.put(apiUrl + 'users/' + user, {headers: new HttpHeaders(
+    return this.http.put(apiUrl + 'users/' + user, userDetails, {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       }

@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-header style="justify-content: center;">
-    <mat-card-title>Login to myFlix</mat-card-title>
+    <mat-card-title>Edit Profile</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <form>
@@ -34,15 +34,35 @@
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
       </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          [(ngModel)]="userData.Email"
+          type="email"
+          placeholder="Email"
+          name="Email"
+          required
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Birthday</mat-label>
+        <input
+          matInput
+          [(ngModel)]="userData.Birthday"
+          type="date"
+          placeholder="dd/mm/yyyy"
+          name="Birthday"
+        >
+      </mat-form-field>
     </form>
   </mat-card-content>
-  <mat-card-actions style=" display: flex; justify-content: center;">
+  <mat-card-actions style="display: flex; justify-content: center;">
     <button
-      class="login-button"
+      class="update-button"
       mat-raised-button
-      (click)="loginUser()"
+      (click)="editUser()"
     >
-      Login
+      Update
     </button>
   </mat-card-actions>
 </mat-card>

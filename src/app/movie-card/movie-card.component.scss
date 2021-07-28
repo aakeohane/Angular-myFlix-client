@@ -9,13 +9,20 @@
   flex: auto;
   max-width: 400px;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  text-align: center;
 }
 
 img {
   width: 300px;
+  position: relative;
+  margin-left: 8%;
 }
 
 mat-icon {
   color: hotpink;
+}
+
+button {
+  color: #008080;
 }

@@ -1,0 +1,68 @@
+<mat-toolbar class="nav-bar">
+  <!-- same nav bar but for smaller screens and larger screen, hamburger menu drops down to mat menu -->
+  <span class="phone-menu">
+      <button 
+        class="home-button"
+        mat-button  
+        routerLink="/movies"
+      >
+        myFlix
+      </button>
+    <button 
+      class="hamburger" 
+      mat-icon-button 
+      [matMenuTriggerFor]="menu" 
+      aria-label="Hamburger menu icon"
+    >
+      <mat-icon>
+        menu
+      </mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button 
+      mat-menu-item 
+      routerLink="/movies"
+    >
+      Home
+    </button>
+      <button 
+        mat-menu-item 
+        routerLink="/profile"
+      >
+        Profile
+      </button>
+      <button 
+        mat-menu-item 
+        (click)="logoutUser()" 
+        routerLink="/"
+      >
+        Logout
+      </button>
+    </mat-menu>
+  </span>
+
+  <span class="menu">
+    <button 
+      mat-button 
+      (click)="logoutUser()" 
+      routerLink="/"
+    >
+      Logout
+    </button>
+    <button 
+      mat-button 
+      routerLink="/profile"
+    >
+      Profile
+    </button>
+    <button 
+      mat-button 
+      routerLink="/movies"
+    >
+      Home
+    </button>
+  </span>
+</mat-toolbar>
+
+
+
