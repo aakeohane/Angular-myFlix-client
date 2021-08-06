@@ -30,7 +30,10 @@ export class MovieCardComponent implements OnInit {
     this.getFavoriteMovies();
   }
 
-  // loads all the movies from database
+  /**
+   * loads all the movies from database 
+   * @returns {array} movies - array of movie objects
+   */ 
   getAllMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -39,7 +42,10 @@ export class MovieCardComponent implements OnInit {
   }
 
   
-  // loads list of users favorites
+  /**
+   * loads list of users favorite movies from database 
+   * @returns list of users fav movies
+   */
   getFavoriteMovies(): void {
     const user = localStorage.getItem('user')
     if (user) {
@@ -52,8 +58,9 @@ export class MovieCardComponent implements OnInit {
     }
   }
 
-  /**  Adds movie to users favorites array
-   @param id
+  /**  
+   * Adds movie to users favorites array
+   * @param id
    */
   addFavMovie(id: string): void {
     this.fetchApiData.addFavMovie(id).subscribe((response: any) => {
@@ -65,8 +72,9 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  /**  remove movie to from favorites array
-   @param id
+  /**  
+   * Removes movie from favorites array
+   * @param id
    */
   removeFavMovie(id: string): void {
     this.fetchApiData.removeFavMovie(id).subscribe((response: any) => {
@@ -78,9 +86,10 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  /**  Opens dialog to display movie title and description
-   @param Title
-   @param Description
+  /**  
+   * Opens dialog to display movie title and description
+   * @param Title
+   * @param Description
    */
   openSynopsisDialog(
     Title: string,
@@ -93,11 +102,11 @@ export class MovieCardComponent implements OnInit {
       }
     })
   }
-
-    /**  Opens dialog to display movie title and genre info
-   @param Title
-   @param Name
-   @param Description
+  /**  
+   * Opens dialog to display movie title and genre info
+   * @param Title
+   * @param Description
+   * @param Name
    */
    openGenreDialog(
     Title: string,
@@ -113,11 +122,12 @@ export class MovieCardComponent implements OnInit {
     })
   }
 
-  /**  Opens dialog to display movie title and director info
-   @param Title
-   @param Name
-   @param Bio
-  */
+  /**  
+   * Opens dialog to display movie title and director info
+   * @param Title
+   * @param Name
+   * @param Bio
+   */
    openDirectorDialog(
     Title: string,
     Name: string,

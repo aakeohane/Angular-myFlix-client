@@ -27,6 +27,12 @@ export class UserRegistrationFormComponent implements OnInit {
   // hides password in form
   hide = true;
 
+  /**
+   * @param fetchApiData
+   * @param dialogRef 
+   * @param snackBar 
+   * @param router
+   */
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserRegistrationFormComponent>,
@@ -37,7 +43,9 @@ export class UserRegistrationFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // function responsible for sending the form inputs to the backend
+  /**
+   * Function responsible for sending the form inputs to the backend
+   */
   registerUser(): void {
     this.fetchApiData.userRegistration(this.userData).subscribe(() => {
       this.loginUser();
@@ -47,7 +55,10 @@ export class UserRegistrationFormComponent implements OnInit {
       })
     })
   }
-
+  
+  /**
+   * Function responsible for logging user in after registration
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {
       // logic for a successful login

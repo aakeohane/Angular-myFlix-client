@@ -7,7 +7,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./navigation-bar.component.scss']
 })
 export class NavigationBarComponent implements OnInit {
-
+  /**
+   * @param snackBar
+   */
   constructor(
     public snackBar: MatSnackBar,
   ) { }
@@ -15,6 +17,9 @@ export class NavigationBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Logs out user
+   */
   logoutUser(): void {
     localStorage.clear();
     this.snackBar.open("See you later!", 'OK', {

@@ -16,6 +16,12 @@ export class UserProfileComponent implements OnInit {
   movies: any[] = [];
   user: any = {};
 
+  /**
+   * 
+   * @param fetchApiData 
+   * @param snackBar 
+   * @param dialog 
+   */
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialog: MatDialog,
@@ -38,6 +44,10 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Function fetching specific users favorite movies
+   * @returns {array} movies - array of favorite movies
+   */
   getFavoriteMovies(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
       // this returns the FavoriteMovies array from users database and loads it to 
@@ -49,8 +59,9 @@ export class UserProfileComponent implements OnInit {
     
   } 
 
-  /**  remove movie to from favorites array
-   @param id
+  /**  
+   * Removes movie from users favorites array
+   * @param id
    */
   removeFavMovie(id: string): void {
     this.fetchApiData.removeFavMovie(id).subscribe((response: any) => {
@@ -62,6 +73,9 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Opens dialog to edit users profile information
+   */
   openEditProfile(): void {
     this.dialog.open(EditProfileComponent, {
       width: '280px',
@@ -71,7 +85,9 @@ export class UserProfileComponent implements OnInit {
       }
     })
   }
-
+  /**
+   * Opens dialog to delete user from database
+   */
   openDeleteProfile(): void {
     this.dialog.open(DeleteProfileComponent, {
       width: '280px',

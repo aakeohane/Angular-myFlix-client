@@ -21,7 +21,13 @@ export class UserLoginFormComponent implements OnInit {
   // hides password 
   hide = true;
   
-
+  /**
+   *
+   * @param fetchApiData
+   * @param dialogRef
+   * @param snackBar
+   * @param router
+   */
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
@@ -31,8 +37,9 @@ export class UserLoginFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  // Sends form inputs to backend
+  /**
+   * Logs user in by sending form inputs to backend
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {
       // logic for a successful login

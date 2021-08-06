@@ -16,11 +16,18 @@ export class WelcomePageComponent implements OnInit {
     
   }
   
+  /**
+   * Opens dialog to register new users
+   */
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, {
       width: '280px'
     })
   }
+
+  /**
+   * Opens dialog to login user
+   */
   openUserLoginDialog(): void {
     this.dialog.open(UserLoginFormComponent, {
       width: '280px'
