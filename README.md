@@ -1,27 +1,83 @@
-# MyFlixAngularClient
+# myFlix - Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
+The front end or client-side of my myFlix app making use of the existing server-side of the myFlix API that I built using **MongoDB**.
 
-## Development server
+## Features ✅
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+**Login Form Component**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Allow users to log in with a username and password using Angular Material dialogs (similar to Bootstrap Modals)
+- Allow user to register (username, password, email and DOB) with a seperate similar \
+  **Registration Form dialog**
+- Authentication and authorization into API using basic HTTP authentication and JWT (token-based) authorization
 
-## Build
+**Main Movie Card Comonent**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Return a list of ALL movies listed with an image, title, and description
+- Ability to select a synopsis, director and genre for more details through a Dialog
+- Allow users to add a movie to their list of favorites
 
-## Running unit tests
+**Profile Component**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Allow users to update their user info(username, password, email, DOB)
+- Allow users to deregister/delete their profile
+- Display users favorite movies
+- Allow users to remove movies from their favorites list
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### User Stories
 
-## Further help
+1. As a user, I want to be able to receive information on movies, directors, and genres so that I can learn more about movies I have watched or am interested in.
+2. As a user, I want to be able to create a profile so I can save data about my favorite movies.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Technologies
+
+- TypeScript
+- [Angular CLI](https://github.com/angular/angular-cli)
+- [Angular Material](https://material.angular.io/)
+- Kanban ([Trello](https://trello.com/))
+
+# Quick Start 🚀
+
+### Development Server
+
+```bash
+ng serve --port 8080
+```
+
+Navigate to [http://localhost:8080/](http://localhost:8080/) The app will automatically reload if you change any of the source files.
+
+```bash
+ng generate component <component-name>
+```
+
+Generates a new component. You can also use:
+
+```bash
+ng generate directive|pipe|service|class|guard|interface|enum|module
+```
+
+To build the project.
+
+```bash
+ng build
+```
+
+The build artifacts will be stored in the `dist/` directory.
+
+---
+
+## Final Reflections
+
+<!-- I cant remember much about this other than having a difficult time understanding the point of endpoints but everything seemed to click after I started using Postmans because i could see the tanghible results of what the endpoints and HTTP requests meant -->
+
+### Author
+
+[Aaron Keohane](https://aakeohane.github.io/Portfolio-Website/index.html)
+
+### Version
+
+**_1.0.0_**
