@@ -1,10 +1,8 @@
-# myFlix - Angular
+# myFlix Angular
 
-The front end or client-side of my myFlix app making use of the existing server-side of the myFlix API that I built using **MongoDB**.
+The front end or client-side of my myFlix app making use of the existing server-side of the myFlix API that I built using **MongoDB**. The user interface was making use of the MEAN stack to demonstrate my ability to work with **_Angular_**.
 
 ## Features ✅
-
----
 
 **Login Form Component**
 
@@ -13,7 +11,7 @@ The front end or client-side of my myFlix app making use of the existing server-
   **Registration Form dialog**
 - Authentication and authorization into API using basic HTTP authentication and JWT (token-based) authorization
 
-**Main Movie Card Comonent**
+**Main Movie Card Component**
 
 - Return a list of ALL movies listed with an image, title, and description
 - Ability to select a synopsis, director and genre for more details through a Dialog
